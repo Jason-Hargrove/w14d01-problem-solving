@@ -1,3 +1,6 @@
+// ===== Log everyting =====
+let log = console.log;
+
 // ===== Verbal Questions =====
 // What is the difference between a parameter and an argument?
 
@@ -9,7 +12,7 @@
 // Answer: return returns some value. console.log prints information to the console and is used for debugging.
 
 
-// ===== Sum Array =====
+// ===== Palindrome =====
 const checkPalindrome = (str) => {
   let lowerCaseStr = str.toLowerCase();
   let reverseStr = lowerCaseStr.split('').reverse().join('');
@@ -19,11 +22,11 @@ const checkPalindrome = (str) => {
     return false;
   }
 }
-console.log(checkPalindrome('Radar'));
-console.log(checkPalindrome("Borscht"));
+log(checkPalindrome('Radar'));
+log(checkPalindrome("Borscht"));
 
 
-// Sum Array <== You are here.
+// ===== Sum Array =====
 const sumArray = (arr) => {
   var sum = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -31,8 +34,51 @@ const sumArray = (arr) => {
   }
   return sum;
 }
-console.log(sumArray([1, 2, 3, 4, 5, 6]));
+log(sumArray([1, 2, 3, 4, 5, 6]));
 
-// Prime Numbers
+// ===== Prime Numbers =====
+// Step one.
+const checkPrime = (num) => {
+  if (num === 2) {
+    return true;
+  }
+  if (num <= 1) {
+    return false;
+  }
+  // Getting rid of even numbers.
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+log(checkPrime(10)); // false
+log(checkPrime(0.4)); // false
+log(checkPrime(11)); // true
+log(checkPrime(111)); // true
+
+// Step two.
+const printPrimes = (num) => {
+
+  for (let i = 0; i <= num; i++) {
+
+  // Needs to be declaired in loop or it stops at 3.
+  let notPrime = false;
+
+    for (let j = 2; j <= i; j++) {
+      if (i % j === 0 && j !== i) {
+        notPrime = true;
+      }
+    }
+    if (notPrime === false) {
+      log(i);
+    }
+  }
+}
+printPrimes(97);
+
+
 
 // Rock Paper Scissors

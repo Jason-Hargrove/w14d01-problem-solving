@@ -36,6 +36,7 @@ const sumArray = (arr) => {
 }
 log(sumArray([1, 2, 3, 4, 5, 6]));
 
+
 // ===== Prime Numbers =====
 // Step one.
 const checkPrime = (num) => {
@@ -80,5 +81,62 @@ const printPrimes = (num) => {
 printPrimes(97);
 
 
+// ===== Rock Paper Scissors =====
+const choicesArr = ['paper', 'rock', 'scissors'];
+const randomMove = (arr) => {
+  let arrIndex =  Math.floor(Math.random() * arr.length);
+  return arr[arrIndex];
+}
 
-// Rock Paper Scissors
+const rockPaperCissors = ( comp, user ) => {
+  log(comp);
+  log(user);
+  if (comp === user) {
+    return 'It\'s a tie.';
+  }
+  if (comp === 'paper' && user === 'rock') {
+    return `Computer chose ${comp} and User chose ${user}. Computer wins.`;
+  }
+  if (comp === 'paper' && user === 'scissors') {
+    return `Computer chose ${comp} and User chose ${user}. Player wins!`;
+  }
+  if (comp === 'rock' && user === 'paper') {
+    return `Computer chose ${comp} and User chose ${user}. Player wins!`;
+  }
+  if (comp === 'rock' && user === 'scissors') {
+    return `Computer chose ${comp} and User chose ${user}. Computer wins.`;
+  }
+  if (comp === 'scissors' && user === 'paper') {
+    return `Computer chose ${comp} and User chose ${user}. Computer wins.`;
+  }
+  if (comp === 'scissors' && user === 'rock') {
+    return `Computer chose ${comp} and User chose ${user}. Player wins!`;
+  } else {
+    return 'I don\'t know what I\'m doing.';
+  }
+}
+log(rockPaperCissors( randomMove(choicesArr), 'paper' ));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===== The End =====
